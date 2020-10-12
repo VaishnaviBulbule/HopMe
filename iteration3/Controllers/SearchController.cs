@@ -95,24 +95,17 @@ namespace Iteration_2.Controllers
 
             }
 
-            int filedStudyID;
-            int field_study_value;
-            if (int.TryParse(Fc["field_study"], out field_study_value))
+            int fieldStudyID;
+           
+            if (int.TryParse(Fc["field_study"], out fieldStudyID))
             {
-                filedStudyID = int.Parse(Fc["field_study"]);
-                foreach (var y in ds.filed_study)
-                {
-                    if (y.id == filedStudyID)
-                    {
-                        field_study_value = y.value;
-                    }
-                }
+                fieldStudyID = int.Parse(Fc["field_study"]);
             }
-            //else
-            //{
-            //    return RedirectToAction("Analysis", "Search");
+            else
+            {
+                return RedirectToAction("Analysis", "Search");
 
-            //}
+            }
 
             int englishID;
             if (int.TryParse(Fc["English_Profeciency"], out englishID))
@@ -127,15 +120,19 @@ namespace Iteration_2.Controllers
 
             foreach (var y in ds.prediction)
             {
-                if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education && y.field_of_study==field_study_value)
+                if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education && y.field_of_study== fieldStudyID)
                 {
                     ViewBag.pred1 = y.pred_1;
                     ViewBag.pred2 = y.pred_2;
                     ViewBag.pred3 = y.pred_3;
                     ViewBag.pred4 = y.pred_4;
                     ViewBag.pred5 = y.pred_5;
+
+
+
+
                 }
-               
+
             }
         
             return View();
