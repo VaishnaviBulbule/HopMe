@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="analysisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agegroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ageGroup" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="English_Profeciency">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="degree" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="filed_study">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="degree" Type="varchar" MaxLength="46" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Highest_education">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="degree" Type="varchar" MaxLength="56" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prediction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="gender" Type="int" Nullable="false" />
+          <Property Name="age_group_10y" Type="int" Nullable="false" />
+          <Property Name="english_proficiency" Type="int" Nullable="false" />
+          <Property Name="highest_education" Type="int" Nullable="false" />
+          <Property Name="field_of_study" Type="int" Nullable="false" />
+          <Property Name="pred_1" Type="varchar" MaxLength="52" Nullable="false" />
+          <Property Name="pred_2" Type="varchar" MaxLength="52" Nullable="false" />
+          <Property Name="pred_3" Type="varchar" MaxLength="52" Nullable="false" />
+          <Property Name="pred_4" Type="varchar" MaxLength="53" Nullable="false" />
+          <Property Name="pred_5" Type="varchar" MaxLength="53" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="analysisModelStoreContainer">
+          <EntitySet Name="agegroup" EntityType="Self.agegroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="English_Profeciency" EntityType="Self.English_Profeciency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="filed_study" EntityType="Self.filed_study" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Highest_education" EntityType="Self.Highest_education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prediction" EntityType="Self.prediction" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="analysisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="agegroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ageGroup1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="English_Profeciency">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="degree" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="filed_study">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="degree" Type="String" MaxLength="46" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gender">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="gender1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Highest_education">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="degree" Type="String" MaxLength="56" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prediction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="Int32" Nullable="false" />
+          <Property Name="age_group_10y" Type="Int32" Nullable="false" />
+          <Property Name="english_proficiency" Type="Int32" Nullable="false" />
+          <Property Name="highest_education" Type="Int32" Nullable="false" />
+          <Property Name="field_of_study" Type="Int32" Nullable="false" />
+          <Property Name="pred_1" Type="String" MaxLength="52" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_2" Type="String" MaxLength="52" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_3" Type="String" MaxLength="52" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_4" Type="String" MaxLength="53" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pred_5" Type="String" MaxLength="53" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="analysisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="agegroup" EntityType="Self.agegroup" />
+          <EntitySet Name="English_Profeciency" EntityType="Self.English_Profeciency" />
+          <EntitySet Name="filed_study" EntityType="Self.filed_study" />
+          <EntitySet Name="gender" EntityType="Self.gender" />
+          <EntitySet Name="Highest_education" EntityType="Self.Highest_education" />
+          <EntitySet Name="prediction" EntityType="Self.prediction" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="analysisModelStoreContainer" CdmEntityContainer="analysisEntities">
+          <EntitySetMapping Name="agegroup">
+            <EntityTypeMapping TypeName="analysisModel.agegroup">
+              <MappingFragment StoreEntitySet="agegroup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ageGroup1" ColumnName="ageGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="English_Profeciency">
+            <EntityTypeMapping TypeName="analysisModel.English_Profeciency">
+              <MappingFragment StoreEntitySet="English_Profeciency">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="degree" ColumnName="degree" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="filed_study">
+            <EntityTypeMapping TypeName="analysisModel.filed_study">
+              <MappingFragment StoreEntitySet="filed_study">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="degree" ColumnName="degree" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gender">
+            <EntityTypeMapping TypeName="analysisModel.gender">
+              <MappingFragment StoreEntitySet="gender">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gender1" ColumnName="gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Highest_education">
+            <EntityTypeMapping TypeName="analysisModel.Highest_education">
+              <MappingFragment StoreEntitySet="Highest_education">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="degree" ColumnName="degree" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prediction">
+            <EntityTypeMapping TypeName="analysisModel.prediction">
+              <MappingFragment StoreEntitySet="prediction">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="age_group_10y" ColumnName="age_group_10y" />
+                <ScalarProperty Name="english_proficiency" ColumnName="english_proficiency" />
+                <ScalarProperty Name="highest_education" ColumnName="highest_education" />
+                <ScalarProperty Name="field_of_study" ColumnName="field_of_study" />
+                <ScalarProperty Name="pred_1" ColumnName="pred_1" />
+                <ScalarProperty Name="pred_2" ColumnName="pred_2" />
+                <ScalarProperty Name="pred_3" ColumnName="pred_3" />
+                <ScalarProperty Name="pred_4" ColumnName="pred_4" />
+                <ScalarProperty Name="pred_5" ColumnName="pred_5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
