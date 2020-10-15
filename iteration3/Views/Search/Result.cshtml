@@ -4,7 +4,7 @@
 }
 <head>
 
-   
+
     <style>
         #pred1 {
             margin-left: 0%;
@@ -76,34 +76,38 @@
 
                 <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
 
-                    <div class="container" id="pred1">
+                    <button class="container" id="pred1">
                         <br />
                         <resultitle>Prediction 1</resultitle><br />
-                        <resultpredict>@ViewBag.pred1  </resultpredict><br />
+                        <resultpredict> @ViewBag.pred1  </resultpredict><br />
                         <br />
-                    </div><br />
-                    <div class="container" id="pred2">
+                    </button><br /><br />
+
+
+
+
+                    <button class="container" id="pred2">
                         <br />
                         <resultitle>Prediction 2</resultitle><br />
                         <resultpredict> @ViewBag.pred2 <br /> </resultpredict><br />
-                    </div><br />
+                    </button><br /><br />
 
-                    <div class="container" id="pred3">
+                    <button class="container" id="pred3">
                         <br />
                         <resultitle>Prediction 3</resultitle><br />
                         <resultpredict>  @ViewBag.pred3 <br /> </resultpredict><br />
-                    </div><br />
+                    </button><br /><br />
 
-                    <div class="container" id="pred4">
+                    <button class="container" id="pred4">
                         <br />
                         <resultitle>Prediction 4</resultitle><br />
                         <resultpredict>  @ViewBag.pred4 <br /> </resultpredict><br />
-                    </div><br />
-                    <div class="container" id="pred5">
+                    </button><br /><br />
+                    <button class="container" id="pred5">
                         <br />
                         <resultitle>Prediction 5 </resultitle><br />
                         <resultpredict>@ViewBag.pred5<br /> </resultpredict><br />
-                    </div>
+                    </button>
 
                 </div>
 
@@ -177,6 +181,7 @@
         }
         if (isValidEmail) {
             var saveUrl = '@Url.Action("CallEmail")';
+         
             var prediction1 = "@ViewBag.pred1";
             var prediction2 = "@ViewBag.pred2";
             var prediction3 = "@ViewBag.pred3";
@@ -200,6 +205,29 @@
     });
 </script>
 
+<script>
 
+    $("#pred1").click(function () {
+         var prediction1 = "@ViewBag.pred1";
+       
+        var Url = '@Url.Action("Jobs")';
+        $.ajax({
+            url: Url,
+            data: {
+                'prediction': prediction1
+            },
+            method: "POST",
+            error: function (response) {
+                alert(response);
+            }
+        })
+    });
+      $("#pred2").click(function () {
+    var prediction2 = "@ViewBag.pred2";
+        alert(prediction2);
+
+
+    });
+</script>
 
 

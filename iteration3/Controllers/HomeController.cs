@@ -32,5 +32,12 @@ namespace Iteration_3.Controllers
             return View();
         }
 
+        public ActionResult Map()
+        {
+
+
+            return View();
+        }
+
     }
 }

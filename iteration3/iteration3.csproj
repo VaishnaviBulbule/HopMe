@@ -228,6 +228,7 @@
     <Content Include="images\evangeline-shaw-VLkoOabAxqw-unsplash.png" />
     <Content Include="images\frontpage_infographic.png" />
     <Content Include="images\hero_1.jpg" />
+    <Content Include="images\homeimage.png" />
     <Content Include="images\img_1.jpg" />
     <Content Include="images\img_2.jpg" />
     <Content Include="images\img_3.jpg" />
@@ -443,6 +444,8 @@
     <Content Include="scss\_site-base.scss" />
     <Content Include="scss\_site-blocks.scss" />
     <Content Include="scss\_site-navbar.scss" />
+    <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Search\Jobs.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

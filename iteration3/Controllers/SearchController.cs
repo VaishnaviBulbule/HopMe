@@ -49,7 +49,12 @@ namespace Iteration_2.Controllers
 
             return View();
         }
+        public ActionResult Jobs()
+        {
 
+           
+            return View();
+        }
         [HttpPost]
         public ActionResult Result(FormCollection Fc)
 
@@ -122,6 +127,8 @@ namespace Iteration_2.Controllers
             {
                 if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education && y.field_of_study== fieldStudyID)
                 {
+
+
                     ViewBag.pred1 = y.pred_1;
                     ViewBag.pred2 = y.pred_2;
                     ViewBag.pred3 = y.pred_3;
@@ -135,6 +142,14 @@ namespace Iteration_2.Controllers
 
             }
         
+            return View();
+        }
+      
+        [HttpPost]
+        public ActionResult Jobs(String prediction)
+        {
+
+            ViewBag.prediction = prediction;
             return View();
         }
         //public ActionResult CreateDocument()
@@ -167,7 +182,7 @@ namespace Iteration_2.Controllers
 
 
 
-            
+
         public void CallEmail(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5,
             string email)
         {
