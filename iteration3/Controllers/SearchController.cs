@@ -148,8 +148,8 @@ namespace Iteration_2.Controllers
         [HttpPost]
         public ActionResult Jobs(String prediction)
         {
-
-            ViewBag.prediction = prediction;
+            
+            ViewData["prediction"] = prediction;
             return View();
         }
         //public ActionResult CreateDocument()
