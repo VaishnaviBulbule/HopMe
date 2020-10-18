@@ -133,15 +133,55 @@ namespace Iteration_2.Controllers
                     ViewBag.pred2 = y.pred_2;
                     ViewBag.pred3 = y.pred_3;
 
-                    // bachelors or higher and engineering
-                    if (highest_education <= 6 && y.field_of_study == 3)
+                    // diploma or higher and NATURAL AND PHYSICAL SCIENCES
+                    if (highest_education >= 15 && y.field_of_study == 1)
                     {
-                        ViewBag.pred1 = "MLG Master Gamer";
+                        ViewBag.pred1 = "Meteorologist";
+                        ViewBag.pred2 = "Exercise Physiologist";
+                    } // INFORMATION TECHNOLOGY
+                    else if(highest_education >= 15 && y.field_of_study == 2)
+                    {
+                        ViewBag.pred1 = "Web Developer";
+                        ViewBag.pred2 = "Data Center Technician";
+                    } // ENGINEERING AND RELATED TECHNOLOGIES
+                    else if(highest_education >= 15 && y.field_of_study == 3)
+                    {
+                        ViewBag.pred1 = "Cyber Security Consultant";
+                        ViewBag.pred2 = "Data Center Technician";
+                    } // ARCHITECTURE AND BUILDING
+                    else if(highest_education >= 15 && y.field_of_study == 4)
+                    {
+                        ViewBag.pred1 = "Architectural Draftsperson";
+                        ViewBag.pred2 = "Junior Design Engineer";
+                    } // AGRICULTURE, ENVIRONMENTAL AND RELATED STUDIES
+                    else if (highest_education >= 15 && y.field_of_study == 5)
+                    {
+                        ViewBag.pred1 = "Bio Technician and R&D assistant";
+                        ViewBag.pred2 = "Environmental Cadet";
+                    } // HEALTH
+                    else if (highest_education >= 15 && y.field_of_study == 6)
+                    {
+                        ViewBag.pred1 = "Personal Care Assistants (PCA)";
+                        ViewBag.pred2 = "Aged Care Workers";
+                    } // MANAGEMENT AND COMMERCE
+                    else if (highest_education >= 15 && y.field_of_study == 8)
+                    {
+                        ViewBag.pred1 = "Sales Consultant";
+                        ViewBag.pred2 = "Business Support Officer";
+                    } // SOCIETY AND CULTURE
+                    else if (highest_education >= 15 && y.field_of_study == 9)
+                    {
+                        ViewBag.pred1 = "Child Protection Practitioner";
+                    } // CREATIVE ARTS
+                    else if (highest_education >= 15 && y.field_of_study == 10)
+                    {
+                        ViewBag.pred1 = "Trainee Arts, Culture & Tourism Officer";
+                    } // FOOD, HOSPITALITY AND PERSONAL SERVICES
+                    else if (highest_education >= 15 && y.field_of_study == 11)
+                    {
+                        ViewBag.pred1 = "Food Services Officer";
+                        ViewBag.pred2 = "Technical Assistant";
                     }
-
-
-
-
 
                 }
 
