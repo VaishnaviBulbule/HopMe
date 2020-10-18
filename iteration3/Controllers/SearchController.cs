@@ -200,7 +200,7 @@ namespace Iteration_2.Controllers
             , string email)
         {
             //The below code is using the sendgrid API to send an e-mail. Code is taken from the sendgrid website.
-            String UNIQUE_KEY = "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";
+            String UNIQUE_KEY = "";
             var client = new SendGridClient(UNIQUE_KEY);
             var from = new EmailAddress("hopmekiwiprod@gmail.com", "Your Predictions!");
             var to = new EmailAddress(email, "");
