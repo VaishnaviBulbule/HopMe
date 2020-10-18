@@ -9,43 +9,56 @@
             width: 100%;
             background-color: grey;
         }
+        #addresstitle {
+            width: 272px;
+            height: 29px;
+            left: 252px;
+            top: 766px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: justify;
+            color: #34A0D2;
+        }
     </style>
     <script>
         function initMap() {
             var center = { lat: -37.8023718, lng: 144.8991083 };
             var locations = [
                 ['Asylum Seeker Resource Centre<br>\
-           214-218 Nicholson St, Footscray VIC 3011 Australia <br>\
-           <a href="https://goo.gl/maps/gozVHR1XvqtjPiqo9" target= "_blank">Get Directions</a>', -37.8023718, 144.8991083],
+               214-218 Nicholson St, Footscray VIC 3011 Australia <br>\
+               <a href="https://goo.gl/maps/gozVHR1XvqtjPiqo9" target= "_blank">Get Directions</a>', -37.8023718, 144.8991083],
                 ['Friends of Refugees<br>\
-            1D Parsons Ave, Springvale VIC 3171 Australia<br>\
-           <a href="https://goo.gl/maps/V9pqC8Nqwr2vK5b28"target= "_blank">Get Directions</a>', -37.9440058, 145.151487],
+                1D Parsons Ave, Springvale VIC 3171 Australia<br>\
+               <a href="https://goo.gl/maps/V9pqC8Nqwr2vK5b28"target= "_blank">Get Directions</a>', -37.9440058, 145.151487],
                 ['RISE ABILITY RIGHTS<br>\
-            Level 1/247 Flinders Ln, Melbourne VIC 3000 Australia<br>\
-            <a href="https://goo.gl/maps/LPbfCFcDbSsbFVTz9"target= "_blank">Get Directions</a>', -37.8193632, 144.9571746],
+                Level 1/247 Flinders Ln, Melbourne VIC 3000 Australia<br>\
+                <a href="https://goo.gl/maps/LPbfCFcDbSsbFVTz9"target= "_blank">Get Directions</a>', -37.8193632, 144.9571746],
                 ['Southern Migrant and Refugee Centre<br>\
-           39 Clow St, Dandenong VIC 3175 Australia<br>\
-            <a href="https://goo.gl/maps/GxfMAu6rh1PnjNsJA" target= "_blank" >Get Directions</a>', -37.9846905, 145.2167528],
+               39 Clow St, Dandenong VIC 3175 Australia<br>\
+                <a href="https://goo.gl/maps/GxfMAu6rh1PnjNsJA" target= "_blank" >Get Directions</a>', -37.9846905, 145.2167528],
                 ['Asylum Seeker Welcome Centre<br>\
-            212 Sydney Rd, Brunswick VIC 3056 Australia<br>\
-           <a href="https://goo.gl/maps/Ttb2upLpNMZS1M93A" target= "_blank">Get Directions</a>', -37.9968258, 145.1942233],
+                212 Sydney Rd, Brunswick VIC 3056 Australia<br>\
+               <a href="https://goo.gl/maps/Ttb2upLpNMZS1M93A" target= "_blank">Get Directions</a>', -37.9968258, 145.1942233],
                 ['Refugee & Immigration Legal Centre<br>\
-                6/20 Otter St, Collingwood VIC 3066 Australia<br>\
-           <a href="https://goo.gl/maps/t6vTJTR5abAXm4Pq6" target= "_blank">Get Directions</a>', -37.8008999, 144.9857652],
+                    6/20 Otter St, Collingwood VIC 3066 Australia<br>\
+               <a href="https://goo.gl/maps/t6vTJTR5abAXm4Pq6" target= "_blank">Get Directions</a>', -37.8008999, 144.9857652],
                 ['Refugee Migrant Children Centre (RMCC)<br>\
-                 21A Sun Cres, Sunshine VIC 3020 Australia<br>\
-                <a href="https://goo.gl/maps/xt1Rs2FLSKu9YrkP7" target= "_blank">Get Directions</a>', -37.7885452, 144.8313795],
+                     21A Sun Cres, Sunshine VIC 3020 Australia<br>\
+                    <a href="https://goo.gl/maps/xt1Rs2FLSKu9YrkP7" target= "_blank">Get Directions</a>', -37.7885452, 144.8313795],
                 ['Refuge of Hope<br>\
-                15/20 Commercial Rd, Melbourne VIC 3004 Australia<br>\
-                <a href="https://goo.gl/maps/noxSNYgBmLQsLgEy5" target= "_blank">Get Directions</a>', -37.8455762, 144.9844064],
+                    15/20 Commercial Rd, Melbourne VIC 3004 Australia<br>\
+                    <a href="https://goo.gl/maps/noxSNYgBmLQsLgEy5" target= "_blank">Get Directions</a>', -37.8455762, 144.9844064],
 
                 ['Immigration & Refugee Specialists PTY LTD<br>\
-                 416-420 Collins St, Melbourne VIC 3000 Australia<br>\
-                <a href="https://goo.gl/maps/GdxautBmYWZ87uxx6" target= "_blank">Get Directions</a>', -37.8189955, 144.9541445],
+                     416-420 Collins St, Melbourne VIC 3000 Australia<br>\
+                    <a href="https://goo.gl/maps/GdxautBmYWZ87uxx6" target= "_blank">Get Directions</a>', -37.8189955, 144.9541445],
                 ['Litsa Pavlou, Migration and Refugee Lawyer<br>\
-                333 Collins St, Melbourne VIC 3000 Australia<br>\
-                <a href="https://goo.gl/maps/xdiSuTgHXw7ha5iK8" target= "_blank">Get Directions</a>', -37.817355, 144.963304]
-                           
+                    333 Collins St, Melbourne VIC 3000 Australia<br>\
+                    <a href="https://goo.gl/maps/xdiSuTgHXw7ha5iK8" target= "_blank">Get Directions</a>', -37.817355, 144.963304]
+
 
             ];
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -69,23 +82,121 @@
             }
         }
     </script>
- 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYOHR9rYbH1I199DNFwfsFOutr64DE3SE&callback=initMap">
     </script>
 </head>
 
 <body>
-    <div class="site-section">
+ 
         <div class="container">
-            <h1 style="font-family: Montserrat; font-style: normal; font-weight: 600; font-size: 36px; line-height: 44px; /* identical to box height */ color: #27A2DB;">Available help centres for refugees in Melbourne</h1>
-            <div id="map"></div>
+                  
+
+            <div class="site-section">
+                <div class="container">
+                    <br /><br />
+                    <h1 style="font-family: Montserrat; font-style: normal; font-weight: 600; font-size: 150%; line-height: 44px; /* identical to box height */ color: #27A2DB;">Available help centres for refugees in Melbourne</h1>
+                    <div id="map"></div>
+
+                </div><br />
+               
+                <div class="container">
+                 
+                    <div class="row align-items-stretch">
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+
+                            <p id="addresstitle"> Employment services</p>
+
+                            <div>
+                                <h4>Ethical Jobs</h4>
+                                <articleSubtitle>address: </articleSubtitle>
+                                <articletext> Level 1, 14-24 Easey St Collingwood, Melbourne, VIC 3066 </articletext><br />
+                                <articleSubtitle>website: </articleSubtitle>
+                                <resourcetext>
+                                    <a href=" https://www.ethicaljobs.com.au/multiculturalism-diversity-jobs  " target="_blank"> https://www.ethicaljobs.com.au/multiculturalism-diversity-jobs </a>
+                                </resourcetext><br />
+                                <articleSubtitle>phone: </articleSubtitle>
+                                <articletext> 03) 9419 5979 </articletext><br /><br /><br />
+
+                                <h4>AMES </h4>
+                                <articleSubtitle>address: </articleSubtitle>
+                                <articletext> 255 William Street Melbourne VIC 3000 </articletext><br />
+                                <articleSubtitle>website: </articleSubtitle>
+                                <resourcetext>
+                                    <a href=" https://www.ames.net.au/find-a-job " target="_blank"> https://www.ames.net.au/find-a-job </a>
+                                </resourcetext><br />
+                                <articleSubtitle>phone: </articleSubtitle>
+                                <articletext>  13 2637  </articletext><br /><br /><br />
+
+                                <h4>BSL </h4>
+                                <articleSubtitle>address: </articleSubtitle>
+                                <articletext> 67 Brunswick Street Fitzroy, VIC 3065  </articletext><br />
+                                <articleSubtitle>website: </articleSubtitle>
+                                <resourcetext>
+                                    <a href="https://www.bsl.org.au/services/getting-a-job/given-the-chance/ " target="_blank"> https://www.bsl.org.au/services/getting-a-job/given-the-chance/ </a>
+                                </resourcetext><br />
+                                <articleSubtitle>phone: </articleSubtitle>
+                                <articletext>  (03) 9483 1183  </articletext><br /><br /><br />
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+
+                            <p id="addresstitle"> Emergency help</p>
+
+                            <div>
+                                <h4>Refugee Servicing Network </h4>
+                                <articleSubtitle>address: </articleSubtitle>
+                                <articletext> 94 York Street South Melbourne VIC 3205  </articletext><br />
+                                <articleSubtitle>website: </articleSubtitle>
+                                <resourcetext>
+                                    <a href=" https://www.servicesaustralia.gov.au/individuals/services/centrelink/refugee-servicing-network  " target="_blank"> https://www.servicesaustralia.gov.au/individuals <br />/services/centrelink/refugee-servicing-network </a><br />
+                                </resourcetext><br />
+                                <articleSubtitle>phone: </articleSubtitle>
+                                <articletext> 0131 202 </articletext><br /><br /><br />
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+
+                            <p id="addresstitle">Medical assistance</p>
+
+                            <div>
+                                <h4>Refugee Health Service</h4>
+                                <articleSubtitle>address: </articleSubtitle>
+                                <articletext> 122 Thomas St, Dandenong VIC 3175 </articletext><br />
+                                <articleSubtitle>phone: </articleSubtitle>
+                                <articletext> (03) 9792 8100 </articletext><br /><br /><br />
+
+                                <h4>Cabrini Asylum Seeker and Refugee Health Hub</h4>
+                                <articleSubtitle>address: </articleSubtitle>
+                                <articletext> 503 Sydney Rd, Brunswick VIC 3056  </articletext><br />
+                                <articleSubtitle>phone: </articleSubtitle>
+                                <articletext> (03) 8388 7874 </articletext><br /><br /><br />
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
         </div>
 
-
-    </div>
+       
+ 
 
 
 </body>
 
 </html>
+

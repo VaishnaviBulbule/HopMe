@@ -59,11 +59,14 @@ jQuery(document).ready(function($) {
 			var $this = $(this),
 				w = $this.width();
 
-			if ( w > 768 ) {
-				if ( $('body').hasClass('offcanvas-menu') ) {
+			if (w > 768) {
+				if ($('body').hasClass('offcanvas-menu')) {
 					$('body').removeClass('offcanvas-menu');
-				}
-			}
+				} 
+			} 
+			var h = window.screen.availHeight;
+			$("#homemap").css("top", h * 0.25);
+			$("#chatbot").css("top", h * 0.4);
 		})
 
 		$('body').on('click', '.js-menu-toggle', function(e) {
@@ -217,21 +220,29 @@ jQuery(document).ready(function($) {
 	siteSticky();
 
 	// navigation
-  var OnePageNavigation = function() {
-    var navToggler = $('.site-menu-toggle');
-   	$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a", function(e) {
-      e.preventDefault();
+	var OnePageNavigation = function () {
+		var navToggler = $('.site-menu-toggle');
+		$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a", function (e) {
+			if (e != null) {
+				var url = e.target.attributes.href.value;
+				if (url.indexOf("#") > -1 && url.indexOf(location.href) > -1)
+					e.preventDefault();
+				else
+					return;
+			}
+			var hash = this.hash;
+			var top = 0;
+			if ($(hash) != null)
+				top = $(hash).offset().top - 30;
 
-      var hash = this.hash;
+			$('html, body').animate({
+				'scrollTop': top
+			}, 1500, 'easeInOutCirc', function () {
+				window.location.hash = hash;
+			});
 
-      $('html, body').animate({
-        'scrollTop': $(hash).offset().top - 0
-      }, 1000, 'easeInOutCirc', function(){
-        window.location.hash = hash;
-      });
-
-    });
-  };
+		});
+	};
   OnePageNavigation();
 
   var siteScroll = function() {

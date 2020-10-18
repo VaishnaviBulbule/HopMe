@@ -228,19 +228,18 @@ namespace Iteration_2.Controllers
 
 
 
-        public void CallEmail(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5,
+        public void CallEmail(string prediction1, string prediction2, string prediction3,
             string email)
         {
-            Execute(prediction1, prediction2, prediction3, prediction4, prediction5, email).Wait();
+            Execute(prediction1, prediction2, prediction3, email).Wait();
 
         }
 
 
-        static async Task Execute(string prediction1, string prediction2, string prediction3, string prediction4, string prediction5
-            , string email)
+        static async Task Execute(string prediction1, string prediction2, string prediction3,string email)
         {
             //The below code is using the sendgrid API to send an e-mail. Code is taken from the sendgrid website.
-            String UNIQUE_KEY = "";
+            String UNIQUE_KEY = " ";
             var client = new SendGridClient(UNIQUE_KEY);
             var from = new EmailAddress("hopmekiwiprod@gmail.com", "Your Predictions!");
             var to = new EmailAddress(email, "");
@@ -248,8 +247,8 @@ namespace Iteration_2.Controllers
             var htmlContent =
             "<p>" + "hopMe-kiwiprod <br><br> Hello! Your result is ready based on our Employability Solution. <br> <br> Areas you will most likely be employed in:<br>"
                 + "Prediction 1- " + prediction1 + "<br>" + "Prediction 2- " + prediction2 + "<br>" + "Prediction 3- " + prediction3 +
-                "<br>" + "Prediction 4- " + prediction4 + "<br>" + "Prediction 5- " + prediction5 + "<br> <br>" +
-                "Read related articles:https://iteration2.hopme-kiwiprod.ml/Search/Articles" + "<br><br>" + "Thank you for trying out our AI model. <br> <br> hopMe truly wishes you" +
+                 "<br> <br>" +
+                "Read related articles:https://https://hopme-kiwiprod.ml/Search/Articles" + "<br><br>" + "Thank you for trying out our AI model. <br> <br> hopMe truly wishes you" +
                 "all the best with your career journey!<br><br>" + "Best Regards,<br>Kiwiprod<br>" +
                 "</p>";
 

@@ -71,6 +71,7 @@
             <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="container">
+                    <br />
                     <ResultTitle> Areas you will most likely be employed in: </ResultTitle><br /><br />
                 </div>
 
@@ -158,14 +159,12 @@
             var prediction1 = "@ViewBag.pred1";
             var prediction2 = "@ViewBag.pred2";
             var prediction3 = "@ViewBag.pred3";
-            var prediction4 = "@ViewBag.pred4";
-            var prediction5 = "@ViewBag.pred5";
+
 
             $.ajax({
                 url: saveUrl,
                 data: {
-                    'prediction1': prediction1, 'prediction2': prediction2, 'prediction3': prediction3, 'prediction4': prediction4,
-                    'prediction5': prediction5, 'email': email
+                    'prediction1': prediction1, 'prediction2': prediction2, 'prediction3': prediction3, 'email': email
                 },
                 method: "POST",
                 error: function () {

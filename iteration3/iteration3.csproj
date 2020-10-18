@@ -357,8 +357,9 @@
     <Content Include="Views\Search\Email.cshtml" />
     <Content Include="Views\Search\quizz.cshtml" />
     <Content Include="Views\Search\Result.cshtml" />
-    <Content Include="scss\.DS_Store" />
-    <Content Include="scss\bootstrap\.DS_Store" />
+    <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Search\Jobs.cshtml" />
+    <Content Include="Views\Home\test.cshtml" />
     <Content Include="scss\bootstrap\bootstrap-grid.scss" />
     <Content Include="scss\bootstrap\bootstrap-reboot.scss" />
     <Content Include="scss\bootstrap\bootstrap.scss" />
@@ -452,9 +453,6 @@
     <Content Include="scss\_site-base.scss" />
     <Content Include="scss\_site-blocks.scss" />
     <Content Include="scss\_site-navbar.scss" />
-    <Content Include="Views\Home\Map.cshtml" />
-    <Content Include="Views\Search\Jobs.cshtml" />
-    <Content Include="Views\Home\test.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
