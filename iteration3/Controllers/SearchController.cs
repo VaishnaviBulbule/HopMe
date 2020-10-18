@@ -17,7 +17,7 @@ namespace Iteration_2.Controllers
     public class SearchController : Controller
     {
         // GET: Search
-        analysisEntities ds = new analysisEntities();
+        webModel ds = new webModel();
       
         public ActionResult Analysis()
         {
@@ -49,10 +49,12 @@ namespace Iteration_2.Controllers
 
             return View();
         }
-        public ActionResult Jobs()
+
+        
+        public ActionResult Jobs(String prediction)
         {
 
-           
+            ViewBag.prediction = prediction;
             return View();
         }
         [HttpPost]
@@ -127,13 +129,16 @@ namespace Iteration_2.Controllers
             {
                 if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education && y.field_of_study== fieldStudyID)
                 {
-
-
                     ViewBag.pred1 = y.pred_1;
                     ViewBag.pred2 = y.pred_2;
                     ViewBag.pred3 = y.pred_3;
-                    ViewBag.pred4 = y.pred_4;
-                    ViewBag.pred5 = y.pred_5;
+
+                    // bachelors or higher and engineering
+                    if (highest_education <= 6 && y.field_of_study == 3)
+                    {
+                        ViewBag.pred1 = "MLG Master Gamer";
+                    }
+
 
 
 
@@ -145,13 +150,13 @@ namespace Iteration_2.Controllers
             return View();
         }
       
-        [HttpPost]
-        public ActionResult Jobs(String prediction)
-        {
-            
-            ViewData["prediction"] = prediction;
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult Jobs(String prediction)
+        //{ 
+        //   ViewBag.prediction = prediction;
+        //    return View();
+        //}
+
         //public ActionResult CreateDocument()
         //{
         //Create an instance of PdfDocument.
@@ -195,7 +200,7 @@ namespace Iteration_2.Controllers
             , string email)
         {
             //The below code is using the sendgrid API to send an e-mail. Code is taken from the sendgrid website.
-            String UNIQUE_KEY = "";
+            String UNIQUE_KEY = "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";
             var client = new SendGridClient(UNIQUE_KEY);
             var from = new EmailAddress("hopmekiwiprod@gmail.com", "Your Predictions!");
             var to = new EmailAddress(email, "");

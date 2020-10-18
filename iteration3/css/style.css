@@ -4,7 +4,7 @@ hopme {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 800%;
+    font-size: 500%;
     /* or 174px */
     letter-spacing: -0.075em;
     color: #000000;
@@ -2122,3 +2122,21 @@ h1, h2, h3, h4, h5,
   background-color: #4285f4 !important;
   border-color: #4285f4 !important;
   color: #fff; }
+
+/*//test*/
+/*.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+    .navbar-toggler:hover, .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    .navbar-toggler:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }*/

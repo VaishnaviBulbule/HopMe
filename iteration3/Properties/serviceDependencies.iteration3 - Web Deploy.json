@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/iteration3dbserver/databases/iteration3_db",
+      "type": "mssql.azure",
+      "connectionId": "analysisEntities",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

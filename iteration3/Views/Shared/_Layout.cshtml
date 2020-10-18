@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
 
-    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+ 
 
     <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
 
@@ -59,6 +59,7 @@
     <script src="~/js/jquery.countdown.min.js"></script>
     <script src="~/js/bootstrap-datepicker.min.js"></script>
     <script src="~/js/jquery.easing.1.3.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -92,6 +93,9 @@
 
                 <div class="col-12 col-md-9 col-xl-8 main-menu">
                     <nav class="site-navigation position-relative text-right" role="navigation">
+                        @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="oi oi-menu"></span> Menu
+                </button>*@
 
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0" id="ftco-nav">
                             <li><a href="~/Home/Homepage#home-section" class="nav-link">Home</a></li>
@@ -105,33 +109,40 @@
                                 </ul>
                             </li>
                             <li><a href="~/Home/news" class="nav-link">News</a></li>
-                            @*<li><a href="~/Home/About" class="nav-link">About us</a></li>*@
                         </ul>
+
+
                     </nav>
                 </div>
-                @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="oi oi-menu"></span> Menu
-                    </button>*@
+
                 <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0"><a data-target="#ftco-nav" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
             </div>
         </div>
     </header>
 
-    <div style="position: fixed;
-        right: 0;
-        bottom: 0;
-    ">
-        <a href="~/Home/Map" class="btn btn-primary mr-2 mb-4"> Help centres  ➔</a>
+
+    <div class="container">
+        <div  style="position:fixed;bottom:30%;right:0%;z-index: 99 !important;">
+     
+            <a href="../Home/Map" class="mb-0 "  title="Available help centres">
+                <img style="height:80px;width:80px;margin-right:2px;" src="~/images/Group 6.png" />
+            </a>
+        </div>
+
+        <div id="chatbot" style="position:fixed;bottom:10%;right:0%;z-index: 99 !important;">
+
+            <iframe id="chatbot1" src='https://webchat.botframework.com/embed/hopmetrial-bot1?s=PhkOgRX9dQk.VXXNJSvOb2gtSWKBvxFCHHx3Daxndqy6PBeRZgUHxNY'
+                    style='width: 300px; height: 300px;margin-right:20px;display:none'></iframe>
+
+            <img style="height:80px;width:80px;position:sticky;margin-right:2px;" src="~/images/chatbot.png" id="chatbotimg" title="HOPPIE Chatbot"/>
+        
+
+
+        </div>
+
+
     </div>
-
-
-
-
-    @*<script>
-            $(document).ready(function () {
-                $('html, body').animate({ scrollTop: $(window).height() / 1.5 }, 'slow');
-            });
-        </script>*@
+  
 
     <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous"></script-->
     <script src="~/js/aos.js"></script>
@@ -148,14 +159,7 @@
         }
     </script>
 
-    <div id="chatbot" style="position:fixed;bottom:1%;right:15%;z-index: 99 !important;">
-        <iframe id="chatbot1" src='https://webchat.botframework.com/embed/hopmetrial-bot1?s=PhkOgRX9dQk.VXXNJSvOb2gtSWKBvxFCHHx3Daxndqy6PBeRZgUHxNY'
-                style='width: 300px; height: 300px;margin-right:20px;display:none'></iframe>
-
-        <img style="height:80px;width:80px;position:sticky;margin-right:2px;" id="chatbotimg" src="~/images/chatbot.png" />
-
-    </div>
-
+   
 
     <script>
         $("#chatbotimg").click(function () {
@@ -170,6 +174,7 @@
             $('html, body').animate({ scrollTop: $(window).height() / 1.5 }, 'slow');
         });
     </script>
+
     @*<script src="~/js/jquery-3.5.1.min.js"></script>*@
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/js/jquery-ui.js"></script>

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE Highest_education(
   id     INTEGER  NOT NULL PRIMARY KEY 
-  ,degree VARCHAR(56) NOT NULL
+  ,degree VARCHAR(80) NOT NULL
   ,value  INTEGER  NOT NULL
 
 );

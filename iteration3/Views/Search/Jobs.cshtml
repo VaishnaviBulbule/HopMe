@@ -7,17 +7,86 @@
 <h2>Jobs</h2>
 <body>
     <div class="site-section">
-      
+       
+        <div class="container">
+            <h1 style="font-family: Montserrat; font-style: normal; font-weight: 600; font-size: 36px; line-height: 44px; /* identical to box height */ color: #27A2DB;">Relative jobs for you in Melbourne</h1>
+            <div class="jobs"></div>
+
+
+        </div>
+
+
+
+
+
         
-        
-        @ViewBag.prediction
 
 
-
-
-   
-    
-    
     </div>
 </body>
+<script src="~/js/jquery-3.5.1.min.js"></script>
+<script>
+    var prediction = "@ViewBag.prediction";
+    prediction = prediction.replaceAll(" ","%20");
+    var url = "https://api.adzuna.com/v1/api/jobs/au/search/1?app_id=076a7260&app_key=0b177418d453470caf2f1059a463a6fb&results_per_page=12&what_and=" + prediction + "&location0=Australia&location1=Victoria&content-type=application/json" ;
 
+    $(document).ready(function () {
+        $.get(url, function (res){
+            console.log(url);
+            if (res.results.length > 0) {
+                var s = "";
+                s += " <div class='row mb - 4 justify - content - center text - center' data-aos='fade - up'>";
+                s += " <div class='card - group'>";
+                if (res.results.length >= 12) {
+                    for (var i = 0; i < 12; i++) {
+                        s += " <div class='card'>";
+                        s += "  <div class='card - body'>";
+                        s += "<h5 style= 'color:#FFC45B'>" + res.results[i].title + "</h5>";
+                        s += "<p class='card - text'>" + "Company Name: " + res.results[i].company["display_name"] + "</p>";
+                        s += "<p>" + "Description: " + res.results[i].description + "</p>";
+                        s += "</div>";
+                        s += " <div class='card - footer'>";
+                        s += "<a href=" + res.results[i].redirect_url + " class='btn btn - primary target='_blank''>Find More Details</a>";
+                        s += " </div>";
+                        s += "<br />"
+                        s += "<br />"
+                    }
+                }
+
+                else {
+                    for (var i = 0; i < res.results.length; i++) {
+                        s += " <div class='card'>";
+                        s += "  <div class='card - body'>";
+                        s += "<h5 >" + res.results[i].title + "</h5>";
+                        s += "<p class='card - text'>" + "Company Name: " + res.results[i].company[2] + "</p>";
+                        s += "<p'>" + "Description: " + res.results[i].description + "</p>";
+                        s += "</div>";
+                        s += " <div class='card - footer'>";
+                        s += "<a href=" + res.results[i].redirect_url + "class='btn btn-primary mr-2 mb-2 target='_blank' '>Find More Details</a>";
+                        s += " </div>";
+                        s += "<br />"
+                        s += "<br />"
+                    }
+                }
+                s += " </div>";
+                s += " </div>";
+                $('.jobs').html(s);
+            }
+            else {
+                var s = "";
+                s += "<p class='card - text'>" + "No related jobs information"  + "</p>";
+                $('.jobs').html(s);
+            }
+        })
+
+
+
+
+
+
+    });
+
+
+
+
+</script>
