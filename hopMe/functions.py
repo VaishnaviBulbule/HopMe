@@ -47,4 +47,20 @@ def get_employment_status(emp_df):
 # Function for return top N predictions
 def topn_predictions(ml, df, n=5):
     predictions = ml.predict_proba(df)
-    return [ml.classes_[x] for x in np.argsort(predictions, axis=1)[:, :5]]
+    return [ml.classes_[x] for x in np.argsort(predictions, axis=1)[:, :n]]
+
+
+# Due to small sample size, adjust prediction outcomes to better fit expectations
+def business_logic(x):
+    if "Farm Worker" in x:
+        return x.replace("Farm Worker", "Farmer")
+    elif x in ["Driller", "Miner", "Shot Firer"]:
+        return "Engineering Production Manager"
+    elif x in ["Chocolate Packer", "Container Filler", "Fruit and Vegetable Packer", "Meat Packer", "Seafood Packer", "Packers"]:
+        return "Packaging Manager"
+    elif x in ["Timber and Wood Process Workers", "Paper and Pulp Mill Worker", "Sawmill or Timber Yard Worker", "Wood and Wood Products Factory Worker"]:
+        return "Timber Production Manager"
+    elif x in ["Plastics and Rubber Factory Workers", "Plastics Factory Worker", "Rubber Factory Worker"]:
+        return "Product Quality Controllers"
+    else:
+        return x
