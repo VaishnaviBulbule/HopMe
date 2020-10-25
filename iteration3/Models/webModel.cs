@@ -12,29 +12,19 @@ namespace iteration3.Models
         {
         }
 
-        public virtual DbSet<agegroup> agegroup { get; set; }
         public virtual DbSet<English_Profeciency> English_Profeciency { get; set; }
         public virtual DbSet<filed_study> filed_study { get; set; }
-        public virtual DbSet<gender> gender { get; set; }
         public virtual DbSet<Highest_education> Highest_education { get; set; }
         public virtual DbSet<prediction> prediction { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<agegroup>()
-                .Property(e => e.ageGroup1)
-                .IsUnicode(false);
-
             modelBuilder.Entity<English_Profeciency>()
                 .Property(e => e.degree)
                 .IsUnicode(false);
 
             modelBuilder.Entity<filed_study>()
                 .Property(e => e.degree)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<gender>()
-                .Property(e => e.gender1)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Highest_education>()

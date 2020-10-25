@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container col-12 col-sm-6 col-md-8 " style="margin-top:8%; margin-bottom: 1%">
-    <br /><br /><br /><br />
-    <div class="container justify-content-center text-center">
+<div class="container col-12 col-sm-6 col-md-8 " style="margin-top:0%; margin-bottom: 1%">
+    <br /><br />
+    <div class="container justify-content-center text-center" style="margin-top:8%;">
         <choose>Insert your details:</choose>
     </div><br />
     <div class="container  col-12 col-sm-6 col-md-12">
@@ -15,25 +15,15 @@
         @using (Html.BeginForm("Result", "Search", FormMethod.Post)) {
             <form action="/action_page.php">
                 <div class="container col-12 col-sm-6 col-md-8" style="width:100%">
-                    <div class=" justify-content-center text-center">
-
-                        @Html.DropDownList("Gender", ViewBag.gender as SelectList, "Select Gender", new { @class = "btn btn-secondary dropdown-toggle" })
-                    </div><br />
+                   
                     <div class="justify-content-center text-center">
-
-
-                        @Html.DropDownList("age", ViewBag.age as SelectList, "Select Age", new { @class = "btn btn-secondary dropdown-toggle" })
-                    </div><br />
-
-                    <div class="justify-content-center text-center">
-
 
                         @Html.DropDownList("education", ViewBag.education as SelectList, "Select Education", new { @class = "btn btn-secondary dropdown-toggle" })
                     </div><br />
                     <div class="justify-content-center text-center">
 
 
-                        @Html.DropDownList("field_study", ViewBag.field_study as SelectList, "Select Field", new { @class = "btn btn-secondary dropdown-toggle" })
+                        @Html.DropDownList("field_study", ViewBag.field_study as SelectList, "Select Area of Interest", new { @class = "btn btn-secondary dropdown-toggle" })
                     </div><br />
 
                     <div class="justify-content-center text-center">

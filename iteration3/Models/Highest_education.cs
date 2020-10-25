@@ -12,7 +12,7 @@ namespace iteration3.Models
         public int id { get; set; }
 
         [Required]
-        [StringLength(80)]
+        [StringLength(36)]
         public string degree { get; set; }
 
         public int value { get; set; }

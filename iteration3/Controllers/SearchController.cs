@@ -21,8 +21,8 @@ namespace Iteration_2.Controllers
       
         public ActionResult Analysis()
         {
-            ViewBag.age = new SelectList(ds.agegroup, "Id", "ageGroup1");
-            ViewBag.gender = new SelectList(ds.gender, "Id", "gender1");
+            //ViewBag.age = new SelectList(ds.agegroup, "Id", "ageGroup1");
+            //ViewBag.gender = new SelectList(ds.gender, "Id", "gender1");
             ViewBag.English_Profeciency = new SelectList(ds.English_Profeciency, "Id", "degree", "value");
             ViewBag.education = new SelectList(ds.Highest_education, "Id", "degree", "value");
             ViewBag.field_study = new SelectList(ds.filed_study, "Id", "degree", "value");
@@ -61,27 +61,27 @@ namespace Iteration_2.Controllers
         public ActionResult Result(FormCollection Fc)
 
         {
-            int genderID;
-            if (int.TryParse(Fc["Gender"], out genderID))
-            {
-                genderID = int.Parse(Fc["Gender"]);
+            //int genderID;
+            //if (int.TryParse(Fc["Gender"], out genderID))
+            //{
+            //    genderID = int.Parse(Fc["Gender"]);
              
-            }
-            else
-            {
-                return RedirectToAction("Analysis", "Search");
-            }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Analysis", "Search");
+            //}
 
-            int ageID;
-            if (int.TryParse(Fc["age"], out ageID))
-            {
-                ageID = int.Parse(Fc["age"]);
+            //int ageID;
+            //if (int.TryParse(Fc["age"], out ageID))
+            //{
+            //    ageID = int.Parse(Fc["age"]);
               
-            }
-            else
-            {
-                return RedirectToAction("Analysis", "Search");
-            }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Analysis", "Search");
+            //}
 
             int educationID;
             int highest_education;
@@ -127,57 +127,57 @@ namespace Iteration_2.Controllers
 
             foreach (var y in ds.prediction)
             {
-                if (y.gender == genderID && y.age_group_10y == ageID && y.english_proficiency == englishID && y.highest_education == highest_education && y.field_of_study== fieldStudyID)
+                if ( y.english_proficiency == englishID && y.highest_education == highest_education && y.field_of_study== fieldStudyID)
                 {
                     ViewBag.pred1 = y.pred_1;
                     ViewBag.pred2 = y.pred_2;
                     ViewBag.pred3 = y.pred_3;
 
                     // diploma or higher and NATURAL AND PHYSICAL SCIENCES
-                    if (highest_education >= 15 && y.field_of_study == 1)
+                    if (highest_education >= 7 && y.field_of_study == 1)
                     {
                         ViewBag.pred1 = "Meteorologist";
                         ViewBag.pred2 = "Exercise Physiologist";
                     } // INFORMATION TECHNOLOGY
-                    else if(highest_education >= 15 && y.field_of_study == 2)
+                    else if(highest_education >= 7 && y.field_of_study == 2)
                     {
                         ViewBag.pred1 = "Web Developer";
                         ViewBag.pred2 = "Data Center Technician";
                     } // ENGINEERING AND RELATED TECHNOLOGIES
-                    else if(highest_education >= 15 && y.field_of_study == 3)
+                    else if(highest_education >= 7 && y.field_of_study == 3)
                     {
                         ViewBag.pred1 = "Cyber Security Consultant";
                         ViewBag.pred2 = "Data Center Technician";
                     } // ARCHITECTURE AND BUILDING
-                    else if(highest_education >= 15 && y.field_of_study == 4)
+                    else if(highest_education >= 7 && y.field_of_study == 4)
                     {
                         ViewBag.pred1 = "Architectural Draftsperson";
                         ViewBag.pred2 = "Junior Design Engineer";
                     } // AGRICULTURE, ENVIRONMENTAL AND RELATED STUDIES
-                    else if (highest_education >= 15 && y.field_of_study == 5)
+                    else if (highest_education >= 7 && y.field_of_study == 5)
                     {
-                        ViewBag.pred1 = "Bio Technician and R&D assistant";
+                        ViewBag.pred1 = "Bio Technician";
                         ViewBag.pred2 = "Environmental Cadet";
                     } // HEALTH
-                    else if (highest_education >= 15 && y.field_of_study == 6)
+                    else if (highest_education >= 7 && y.field_of_study == 6)
                     {
                         ViewBag.pred1 = "Personal Care Assistants (PCA)";
                         ViewBag.pred2 = "Aged Care Workers";
                     } // MANAGEMENT AND COMMERCE
-                    else if (highest_education >= 15 && y.field_of_study == 8)
+                    else if (highest_education >= 7 && y.field_of_study == 8)
                     {
                         ViewBag.pred1 = "Sales Consultant";
                         ViewBag.pred2 = "Business Support Officer";
                     } // SOCIETY AND CULTURE
-                    else if (highest_education >= 15 && y.field_of_study == 9)
+                    else if (highest_education >= 7 && y.field_of_study == 9)
                     {
                         ViewBag.pred1 = "Child Protection Practitioner";
                     } // CREATIVE ARTS
-                    else if (highest_education >= 15 && y.field_of_study == 10)
+                    else if (highest_education >= 7 && y.field_of_study == 10)
                     {
-                        ViewBag.pred1 = "Trainee Arts, Culture & Tourism Officer";
+                        ViewBag.pred1 = "Trainee Arts";
                     } // FOOD, HOSPITALITY AND PERSONAL SERVICES
-                    else if (highest_education >= 15 && y.field_of_study == 11)
+                    else if (highest_education >= 7 && y.field_of_study == 11)
                     {
                         ViewBag.pred1 = "Food Services Officer";
                         ViewBag.pred2 = "Technical Assistant";
@@ -239,11 +239,11 @@ namespace Iteration_2.Controllers
         static async Task Execute(string prediction1, string prediction2, string prediction3,string email)
         {
             //The below code is using the sendgrid API to send an e-mail. Code is taken from the sendgrid website.
-            String UNIQUE_KEY = " ";
+            String UNIQUE_KEY = "";
             var client = new SendGridClient(UNIQUE_KEY);
-            var from = new EmailAddress("hopmekiwiprod@gmail.com", "Your Predictions!");
+            var from = new EmailAddress("hopmekiwiprod@gmail.com", "HopMe-by Kiwiprod Analysis result");
             var to = new EmailAddress(email, "");
-            var plainTextContent = "Your Predictions!"; //use your prediction strings here to form the template
+            var plainTextContent = "HopMe-by Kiwiprod Analysis result"; //use your prediction strings here to form the template
             var htmlContent =
             "<p>" + "hopMe-kiwiprod <br><br> Hello! Your result is ready based on our Employability Solution. <br> <br> Areas you will most likely be employed in:<br>"
                 + "Prediction 1- " + prediction1 + "<br>" + "Prediction 2- " + prediction2 + "<br>" + "Prediction 3- " + prediction3 +

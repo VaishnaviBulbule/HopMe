@@ -4,6 +4,7 @@
 }
 <head>
 
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 
     <style>
         #pred1 {
@@ -19,7 +20,7 @@
 
         #pred2 {
             margin-left: 0%;
-            width: 80%;
+            width: 100%;
             height: auto;
             left: 240px;
             top: 478px;
@@ -30,7 +31,7 @@
 
         #pred3 {
             margin-left: 0%;
-            width: 70%;
+            width: 100%;
             height: auto;
             left: 239px;
             top: 636px;
@@ -39,27 +40,7 @@
             border-radius: 60px;
         }
 
-        #pred4 {
-            margin-left: 0%;
-            width: 60%;
-            height: auto;
-            left: 239px;
-            top: 801px;
-            background: #E1FFBB;
-            box-shadow: 0px 4px 4px rgba(20, 146, 25, 0.25);
-            border-radius: 60px;
-        }
-
-        #pred5 {
-            margin-left: 0%;
-            width: 50%;
-            height: auto;
-            left: 239px;
-            top: 940px;
-            background: #FFC8C8;
-            box-shadow: 0px 4px 4px rgba(187, 22, 0, 0.25);
-            border-radius: 60px;
-        }
+      
     </style>
 
 </head>
@@ -73,35 +54,35 @@
                 <div class="container">
                     <br />
                     <ResultTitle> Areas you will most likely be employed in: </ResultTitle><br /><br />
+                    <p style="font-family: Montserrat; font-style: normal; font-weight: normal; font-size: 24px; line-height: 29px; color: rgba(92, 90, 90, 0.67);"> Click on the job title to find out more</p>
                 </div>
 
                 <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 col-xs-10 mr-auto">
 
+                    <resultitle>Prediction 1</resultitle>
                     <button class="container" id="pred1" onclick="location.href='@Url.Action("Jobs","Search",new {prediction=@ViewBag.pred1 })'">
                         <br />
-                        <resultitle>Prediction 1</resultitle><br />
+
                         <resultpredict> @ViewBag.pred1  </resultpredict><br />
                         <br />
                     </button><br /><br />
 
 
 
-
+                    <resultitle>Prediction 2</resultitle><br />
                     <button class="container" id="pred2" onclick="location.href='@Url.Action("Jobs","Search",new {prediction=@ViewBag.pred2 })'">
                         <br />
-                        <resultitle>Prediction 2</resultitle><br />
+
                         <resultpredict> @ViewBag.pred2 <br /> </resultpredict><br />
                     </button><br /><br />
 
+
+                    <resultitle>Prediction 3</resultitle><br />
                     <button class="container" id="pred3" onclick="location.href='@Url.Action("Jobs","Search",new {prediction=@ViewBag.pred3 })'">
                         <br />
-                        <resultitle>Prediction 3</resultitle><br />
+
                         <resultpredict>  @ViewBag.pred3 <br /> </resultpredict><br />
                     </button><br /><br />
-                   </div>
-
-                <div class="col-xl-5 col-lg-5  align-content-start" data-aos="fade-left">
-                    <img class="img-fluid pt-6 d-none d-lg-block align-content-start" src="~/images/3304458 1.png" alt="Image" />
                     <div style="margin-top:20px">
 
                         <button id="emailbut" type="button" class="btn btn-primary mr-2 mb-4">
@@ -114,18 +95,32 @@
                             <input id="email" type="text" class="form-control">
 
                         </div>
-              
+
 
                     </div>
+                </div>
+
+                <div class="col-xl-5 col-lg-5  align-content-start" data-aos="fade-left">
+                    <img class="img-fluid pt-6 d-none d-lg-block align-content-start" src="~/images/3304458 1.png" alt="Image" />
+
                 </div>
                 <div class="col-1"></div>
 
 
 
             </div><br />
+                  <div class="row justify-content-around">
+                      <img src="~/images/text-box 1.png" /> <br />
+
+                  </div>
+               
+           
+            
             <div class="row justify-content-center">
+
                 <a href="~/Search/Articles" class="btn btn-primary mr-2 mb-2">Go to Articles  ➔</a>
             </div>
+
         </div>
 
 
