@@ -49,12 +49,14 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <div id="overlayer"></div>
+    @*loader*@
     <div class="loader">
         <div class="spinner-border text-primary" role="status">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
 
+    @*Google translate api*@
     <div class="container" style="text-align:center">
             <div id="google_translate_element"></div>
         </div>
@@ -69,7 +71,7 @@
             <div class="site-mobile-menu-body"></div>
         </div>
 
-
+        @*navigation bar*@
         <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
             <div class="container">
                 <div class="row align-items-center">
@@ -105,6 +107,7 @@
         </header>
 
         <div>
+            @*Navigate to map*@
             <div id="homemap" style="position:fixed;bottom:30%;right:0%;z-index: 99 !important;">
 
                 <a href="../Home/Map" class="mb-0 " title="Available help centres">
@@ -112,9 +115,10 @@
                 </a>
             </div>
 
+            @*chatbot*@
             <div id="chatbot" style="position:fixed;bottom:30%;right:0%;z-index: 99 !important;">
 
-                <iframe id="chatbot1" src='https://webchat.botframework.com/embed/hopmetrial-bot4?s=9ecMz4YGujs.H24pkdY73AHkRQ48G3PoyOonzUANMJ1QJVCaGCy8Lyc'
+                <iframe id="chatbot1" src='https://webchat.botframework.com/embed/hopmetrial-bot6?s=v6izumTjutE.hmZNpss7MVfo1gaVSN_MEjMpH8q0ETqs7JDwbdz-AfY'
                         style='width: 300px; height: 300px;margin-right:20px;display:none'></iframe>
 
                 <img style="height:80px;width:80px;position:sticky;margin-right:2px;" src="~/images/chatbot.png" id="chatbotimg" title="HOPPIE Chatbot" />
@@ -152,6 +156,7 @@
     <script src="~/js/jquery.sticky.js"></script>
     <script src="~/js/main.js"></script>
 
+    @*google translate script*@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
         //javescript for translate function
     </script>
@@ -161,6 +166,9 @@
             new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
         }
     </script>
+
+
+    @*chatbot script*@
     <script>
         $("#chatbotimg").click(function () {
 
@@ -170,12 +178,8 @@
         });
     </script>
 
-    @*<script>
-        $(document).ready(function () {
-            $('html, body').animate({ scrollTop: $(window).height() / 1.5 }, 'slow');
-        });
-    </script>*@
-
+ 
+    @*location of two icon*@
     <script type="text/javascript">
         var h = window.screen.availHeight;
         $("#homemap").css("top", h * 0.25);

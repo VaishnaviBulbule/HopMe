@@ -16,9 +16,10 @@ namespace Iteration_2.Controllers
 {
     public class SearchController : Controller
     {
-        // GET: Search
+        
         webModel ds = new webModel();
       
+        // Get options from data table for users
         public ActionResult Analysis()
         {
             //ViewBag.age = new SelectList(ds.agegroup, "Id", "ageGroup1");
@@ -58,31 +59,11 @@ namespace Iteration_2.Controllers
             return View();
         }
         [HttpPost]
+
+        // Get selection from users, then match value based on database, pass value to result page.
         public ActionResult Result(FormCollection Fc)
 
         {
-            //int genderID;
-            //if (int.TryParse(Fc["Gender"], out genderID))
-            //{
-            //    genderID = int.Parse(Fc["Gender"]);
-             
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Analysis", "Search");
-            //}
-
-            //int ageID;
-            //if (int.TryParse(Fc["age"], out ageID))
-            //{
-            //    ageID = int.Parse(Fc["age"]);
-              
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Analysis", "Search");
-            //}
-
             int educationID;
             int highest_education;
             if (int.TryParse(Fc["education"], out highest_education))
@@ -190,44 +171,12 @@ namespace Iteration_2.Controllers
             return View();
         }
       
-        //[HttpPost]
-        //public ActionResult Jobs(String prediction)
-        //{ 
-        //   ViewBag.prediction = prediction;
-        //    return View();
-        //}
-
-        //public ActionResult CreateDocument()
-        //{
-        //Create an instance of PdfDocument.
-
-
-
-        //    using (Syncfusion.Pdf.PdfDocument document = new Syncfusion.Pdf.PdfDocument())
-        //    {
-        //        //Add a page to the document
-        //        Syncfusion.Pdf.PdfPage page = document.Pages.Add();
-
-        //        //Create PDF graphics for the page
-        //        PdfGraphics graphics = page.Graphics;
-
-        //        //Set the standard font
-        //        Syncfusion.Pdf.Graphics.PdfFont font = new Syncfusion.Pdf.Graphics.PdfStandardFont(PdfFontFamily.Helvetica, 20);
-
-        //        //Draw the text
-        //        graphics.DrawString("Hello World!!!", font, PdfBrushes.Black, new PointF(0, 0));
-
-        //        // Open the document in browser after saving it
-        //        document.Save("Output.pdf", HttpContext.ApplicationInstance.Response, HttpReadType.Save);
-        //    }
-        //    return View();
-        //}
+       
 
 
 
 
-
-
+        // Pass the 3 predictions and email address to sendgrid api.
         public void CallEmail(string prediction1, string prediction2, string prediction3,
             string email)
         {
@@ -235,7 +184,7 @@ namespace Iteration_2.Controllers
 
         }
 
-
+        //The content of email 
         static async Task Execute(string prediction1, string prediction2, string prediction3,string email)
         {
             //The below code is using the sendgrid API to send an e-mail. Code is taken from the sendgrid website.

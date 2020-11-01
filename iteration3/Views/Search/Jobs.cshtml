@@ -7,10 +7,10 @@
 <h2>Jobs</h2>
 <body>
     <div class="site-section">
-
+        @*shows related jobs by use job API*@
         <div class="container">
             <br />
-            <h1 style="font-family: Montserrat; font-style: normal; font-weight: 600; font-size: 300%; line-height: 44px; /* identical to box height */ color: #27A2DB;">Relative jobs for you in Melbourne</h1>
+            <h1 style="font-family: Montserrat; font-style: normal; font-weight: 600; font-size: 300%; line-height: 44px; /* identical to box height */ color: #27A2DB;">Relative jobs for you </h1>
             <div class="jobs"></div>
 
 
@@ -28,6 +28,8 @@
     </div>
 </body>
 <script src="~/js/jquery-3.5.1.min.js"></script>
+
+@*Using JavaScript to access each job details.*@ 
 <script>
     var prediction = "@ViewBag.prediction";
     prediction = prediction.replaceAll(" ","%20");
@@ -53,6 +55,8 @@
                         s += "<a href=" + res.results[i].redirect_url + " class='btn btn-primary mr-2 mb-2 ' style= 'color:#FFC45B' target='_blank'>Find More Details</a> <br /><br />";
                        
                         s += "<br />"
+
+
                         //s += "<br />"
                     }
                 }
@@ -69,8 +73,7 @@
                        
                       
                         s += "<a href=" + res.results[i].redirect_url + " class='btn btn-primary mr-2 mb-2 ' style= 'color:#FFC45B' target='_blank'>Find More Details</a> <br /><br />";
-                      
-                        
+                                            
                         s += "<br />"
                     }
                 }

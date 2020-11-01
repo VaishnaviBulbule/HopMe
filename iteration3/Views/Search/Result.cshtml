@@ -48,7 +48,7 @@
     <div class="site-section">
 
         <div class="container">
-
+            @*Show three prediction based on user selection.*@
             <div class="row mb-2" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="container">
@@ -83,6 +83,8 @@
 
                         <resultpredict>  @ViewBag.pred3 <br /> </resultpredict><br />
                     </button><br /><br />
+
+                    @*Enter users email to sent result.*@
                     <div style="margin-top:20px">
 
                         <button id="emailbut" type="button" class="btn btn-primary mr-2 mb-4">
@@ -130,6 +132,7 @@
 
 </body>
 
+@*Pass the result to search controller*@
 <script>
     $("#emailbut").click(function (e) {
         debugger;
@@ -172,30 +175,6 @@
     });
 </script>
 
-@*<script>
 
-    $("#pred1").click(function () {
-        debugger;
-         var prediction1 = "@ViewBag.pred1";
-      
-        var Url = '@Url.Action("Jobs","Search")';
-        $.ajax({
-            url: Url,
-            data: {
-                'prediction': prediction1
-            },
-            method: "POST",
-            error: function () {
-                alert();
-            }
-        })
-    });
-      $("#pred2").click(function () {
-    var prediction2 = "@ViewBag.pred2";
-        alert(prediction2);
-
-
-    });
-</script>*@
 
 
